@@ -10,15 +10,18 @@
   </head>
 
   <body>
-    <div>
+     <p>
+  <% if @current_user %>
       <%= flash["notice"] %>
-    </div>
+        <a href="/logout">Logout</a>
+  <% else %>
     <div>
       <a href="/">Home</a>
-      <a href="/logout">Logout</a>
       <a href="/login">Login</a>
       <a href="/users/new">Signup</a>
     </div>
+  <% end %>
+</p>
 
     <%= yield %>
   </body>
